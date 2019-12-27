@@ -22,7 +22,8 @@ namespace DatingApp.Controllers
         [HttpGet]
         public async Task<IEnumerable<Values>> Get()
         {
-            return await _dal.GetAllValues();
+            List<Values> data = await _dal.GetAllValues();
+            return data;
         }
 
 
