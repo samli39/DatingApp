@@ -11,7 +11,7 @@ namespace DatingADO.DAL
 {
     public class ValuesDAL
     {
-        private string url;
+        private readonly string url;
 
         public ValuesDAL(IConfiguration config)
         {

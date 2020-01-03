@@ -61,7 +61,7 @@ namespace DatingApp.DAL
         }
 
         //update multi-data at once
-        public async Task<List<Values>> UpdateMultiValues(List<Values> value)
+        public  List<Values> UpdateMultiValues(List<Values> value)
         {
             _context.Values.UpdateRange(value);
             return value;

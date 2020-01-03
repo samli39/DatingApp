@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.DAL;
 using DatingApp.model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingApp.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -65,9 +67,9 @@ namespace DatingApp.Controllers
 
         //put api/values/multi
         [HttpPut("multi")]
-        public async Task<IActionResult> PutMulti(List<Values> value)
+        public  IActionResult PutMulti(List<Values> value)
         {
-            value = await _dal.UpdateMultiValues(value);
+            value =_dal.UpdateMultiValues(value);
             return Ok(value);
         }
 
