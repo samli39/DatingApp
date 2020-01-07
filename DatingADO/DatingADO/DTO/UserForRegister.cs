@@ -10,7 +10,7 @@ namespace DatingADO.DTO
     {
         [Required]
         public string Username { get; set; }
-        [StringLength(8,MinimumLength=4,ErrorMessage ="password is between 4 to 8 characters]")]
+        [StringLength(8,MinimumLength=3,ErrorMessage ="password is between 3 to 8 characters]")]
         public string Password { get; set; }
     }
 }
