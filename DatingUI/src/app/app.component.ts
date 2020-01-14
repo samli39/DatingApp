@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ValuesService } from 'src/services/values.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/services/auth/auth.service';
 
 
 @Component({
@@ -7,17 +7,12 @@ import { ValuesService } from 'src/services/values.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'DatingUI';
-  valuesList: object;
+export class AppComponent implements OnInit {
 
-
-  constructor(private service: ValuesService) {
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {
-    this.service.GetAll().subscribe(data => {
-      this.valuesList = data;
-    })
+    this.auth.setToken();
   }
 }
